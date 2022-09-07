@@ -27,17 +27,12 @@ Person.prototype.eat = function(edible){
   }
 }
 
+Person.prototype.poop = function(){
+  this.stomach = [];
+}
 Person.prototype.toString = function(){
   return `${this.name}, ${this.age}`;
 }
-
-const lambdaStudentOne = new Person('Luiza', 23);
-const lambdaStudentTwo = new Person('Devon', 29);
-const lambdaStudentThree = new Person('Matt', 443);
-
-console.log(lambdaStudentOne.toString());
-console.log(lambdaStudentTwo.toString());
-console.log(lambdaStudentThree.toString());
 
 
 /*
