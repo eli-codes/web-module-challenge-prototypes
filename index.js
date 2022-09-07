@@ -82,24 +82,27 @@ Car.prototype.drive = function(distance){
 */
 
 function Baby(name, age, favoriteToy) {
-  this.name = name;
-  this.age = age;
+  Person.call(this, name, age);
   this.favoriteToy = favoriteToy;
-} {
-
-  Person.prototype.baby = function(play){
-    this.favoriteToy.play('Playing with x');
-  }
 }
+Baby.prototype = Object.create(Person.prototype);
+Baby.prototype.play = function(){
+  return `Playing with ${this.favoriteToy}`;
+}
+
+
 
 
 /* 
   TASK 4
   In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
-  3. 
-  4. 
+  1. Window Binding - when none of the other rules apply, this will return the window 
+  or global object in node or undefined in strict mode.
+  2. Implicit Binding - when the function is invoked look to the left of the dot that's
+  what this refers to.
+  3. Explicit Binding - .call, .apply, or .bind 
+  4. New Binding - when a function is created as a constructor this points to the newly
+  created object.
 */
 
 ///////// END OF CHALLENGE /////////
